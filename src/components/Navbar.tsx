@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { MessageCircle } from 'lucide-react'
 import InstagramIcon from '@/components/InstagramIcon'
 import SmartImage from '@/components/SmartImage'
-import { BUSINESS } from '@/config'
+import { useSite } from '@/lib/site'
 import { waChatLink } from '@/lib/whatsapp'
 
 const LINKS = [
@@ -13,6 +13,7 @@ const LINKS = [
 ]
 
 export default function Navbar() {
+  const { business } = useSite()
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -55,7 +56,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2.5">
             <a
-              href={BUSINESS.instagram}
+              href={business.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -64,7 +65,7 @@ export default function Navbar() {
               <InstagramIcon size={18} />
             </a>
             <a
-              href={waChatLink()}
+              href={waChatLink(business.whatsapp)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-retro bg-rojo text-blanco"

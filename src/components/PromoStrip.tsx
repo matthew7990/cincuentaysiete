@@ -1,12 +1,8 @@
-const ITEMS = [
-  '3 DE MUZZA $21.000',
-  '3 DE SABORES $27.000',
-  'CONGELADAS · LISTAS PARA HORNEAR',
-  'PEDÍ POR WHATSAPP',
-]
+import { useSite } from '@/lib/site'
 
 export default function PromoStrip() {
-  const row = [...ITEMS, ...ITEMS, ...ITEMS]
+  const { marquee } = useSite()
+  const row = [...marquee, ...marquee, ...marquee]
   return (
     <div className="overflow-hidden bg-rojo border-y-4 border-tinta py-3">
       <div className="animate-marquee flex w-max gap-10 whitespace-nowrap">

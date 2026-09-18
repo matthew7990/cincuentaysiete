@@ -3,7 +3,7 @@ import PizzaArt from './PizzaArt'
 import SmartImage from './SmartImage'
 import Confetti from './Confetti'
 import Starburst from './Starburst'
-import { BUSINESS } from '@/config'
+import { useSite } from '@/lib/site'
 
 const CHIPS = [
   { icon: Snowflake, text: 'Congeladas · 8 porciones' },
@@ -12,6 +12,7 @@ const CHIPS = [
 ]
 
 export default function Hero() {
+  const { business } = useSite()
   return (
     <section id="top" className="relative overflow-hidden bg-halftone pt-32 pb-16 md:pt-44 md:pb-24">
       <Confetti />
@@ -19,7 +20,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
         <div>
           <p className="font-script text-2xl md:text-3xl text-rojo -rotate-2 inline-block">
-            {BUSINESS.fullName} presenta
+            {business.fullName} presenta
           </p>
 
           <h1 className="mt-4 font-retro text-[clamp(2.6rem,7vw,5.2rem)] leading-[0.95] uppercase">
@@ -33,7 +34,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-md text-lg font-medium">
-            Hechas artesanalmente en <strong>{BUSINESS.barrio}</strong>. Las
+            Hechas artesanalmente en <strong>{business.barrio}</strong>. Las
             guardás en el freezer, las horneás en 10 minutos y comés como
             recién hechas.
           </p>

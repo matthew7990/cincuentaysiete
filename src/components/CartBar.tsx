@@ -1,10 +1,12 @@
 import { useMemo, useState } from 'react'
 import { MessageCircle, Minus, Plus, Receipt, Trash2, X } from 'lucide-react'
-import { PRODUCTS, formatPrice } from '@/data/products'
+import { formatPrice } from '@/lib/utils'
+import { useSite } from '@/lib/site'
 import { orderMessage, waLink, type CartLine } from '@/lib/whatsapp'
 import { useCart } from '@/store/cart'
 
 export default function CartBar() {
+  const { products, business } = useSite()
   const items = useCart((s) => s.items)
   const add = useCart((s) => s.add)
   const remove = useCart((s) => s.remove)
@@ -15,7 +17,7 @@ export default function CartBar() {
     () =>
       Object.entries(items)
         .map(([id, qty]) => {
-          const product = PRODUCTS.find((p) => p.id === id)
+          const product = products.find((p) => p.id === id)
           return product ? { product, qty } : null
         })
         .filter((l): l is CartLine => l !== null),
@@ -91,7 +93,7 @@ export default function CartBar() {
                 <p className="text-3xl font-bold text-rojo">{formatPrice(total)}</p>
               </div>
               <a
-                href={waLink(orderMessage(lines, total))}
+                href={waLink(orderMessage(lines, total), business.whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-retro bg-verde text-blanco w-full justify-center mt-4 py-3.5"

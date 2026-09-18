@@ -1,0 +1,139 @@
+{
+  "business": {
+    "name": "57",
+    "fullName": "Cincuenta y Siete",
+    "tagline": "Pizzas caseras listas para hornear",
+    "whatsapp": "5491160585237",
+    "whatsappDisplay": "11 6058-5237",
+    "instagram": "https://www.instagram.com/cincuentaysiete_0k/",
+    "instagramHandle": "@cincuentaysiete_0k",
+    "barrio": "Villa Urquiza",
+    "zona": "Villa Urquiza, Capital Federal",
+    "city": "Capital Federal"
+  },
+  "marquee": [
+    "3 DE MUZZA $21.000",
+    "3 DE SABORES $27.000",
+    "CONGELADAS · LISTAS PARA HORNEAR",
+    "PEDÍ POR WHATSAPP"
+  ],
+  "products": [
+    {
+      "id": "muzza",
+      "name": "Muzzarella",
+      "desc": "La clásica: salsa de tomate casera, abundante muzzarella y orégano.",
+      "price": 8000,
+      "category": "pizzas",
+      "toppings": ["muzza", "aceituna"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "napo",
+      "name": "Napolitana",
+      "desc": "Muzzarella, rodajas de tomate, ajo y provenzal. La favorita de siempre.",
+      "price": 9500,
+      "category": "pizzas",
+      "toppings": ["muzza", "tomate", "provenzal"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "fugazzeta",
+      "name": "Fugazzeta",
+      "desc": "Cebolla dorada sobre una capa generosa de muzzarella.",
+      "price": 9500,
+      "category": "pizzas",
+      "toppings": ["muzza", "cebolla"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "jamon-morron",
+      "name": "Jamón y Morrones",
+      "desc": "Jamón natural, morrones asados y muzzarella.",
+      "price": 9500,
+      "category": "pizzas",
+      "toppings": ["muzza", "jamon", "morron"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "calabresa",
+      "name": "Calabresa",
+      "desc": "Calabresa en rodajas, muzzarella y aceitunas.",
+      "price": 9500,
+      "category": "pizzas",
+      "toppings": ["muzza", "calabresa", "aceituna"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "la-57",
+      "name": "La 57",
+      "desc": "La de la casa: cherrys, provenzal y extra muzza. Edición limitada.",
+      "price": 11000,
+      "badge": "nuevo",
+      "category": "pizzas",
+      "toppings": ["muzza", "cherry", "provenzal", "aceituna"],
+      "size": "8 porciones"
+    },
+    {
+      "id": "pizzeta-muzza",
+      "name": "Pizzeta Muzza",
+      "desc": "Porción individual, misma receta. Ideal para una o dos personas.",
+      "price": 4000,
+      "badge": "nuevo",
+      "category": "pizzetas",
+      "toppings": ["muzza", "aceituna"],
+      "size": "Individual"
+    },
+    {
+      "id": "pizzeta-napo",
+      "name": "Pizzeta Napo",
+      "desc": "Individual: tomate en rodajas, ajo y provenzal.",
+      "price": 4500,
+      "badge": "nuevo",
+      "category": "pizzetas",
+      "toppings": ["muzza", "tomate", "provenzal"],
+      "size": "Individual"
+    },
+    {
+      "id": "promo-3-muzza",
+      "name": "3 de Muzza",
+      "desc": "Tres muzzarellas de 8 porciones. El freezer te lo agradece.",
+      "price": 21000,
+      "badge": "promo",
+      "category": "promos",
+      "toppings": ["muzza", "aceituna"],
+      "size": "3 unidades"
+    },
+    {
+      "id": "promo-3-sabores",
+      "name": "3 de Sabores",
+      "desc": "Tres pizzas a elección entre todos los sabores.",
+      "price": 27000,
+      "badge": "promo",
+      "category": "promos",
+      "toppings": ["muzza", "tomate", "cebolla", "jamon", "morron"],
+      "size": "3 unidades"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "¿Las pizzas vienen congeladas?",
+      "a": "Sí. Todas nuestras pizzas van congeladas y listas para hornear: las sacás del freezer directo al horno, sin descongelar. Duran hasta 3 meses en el freezer."
+    },
+    {
+      "q": "¿Cuánto tardan en hornearse?",
+      "a": "Entre 8 y 12 minutos con el horno bien precalentado a 250-280°C. Están listas cuando la muzzarella burbujea y el borde se dora."
+    },
+    {
+      "q": "¿Cómo hago un pedido?",
+      "a": "Armás tu pedido en esta web y lo enviás por WhatsApp, o nos escribís directamente. Coordinamos entrega y pago por el mismo chat."
+    },
+    {
+      "q": "¿Venden por mayor?",
+      "a": "Sí, trabajamos con mayoristas y particulares: almacenes, rotiserías, dietéticas y eventos. Escribinos por WhatsApp para precios por cantidad."
+    },
+    {
+      "q": "¿Dónde están?",
+      "a": "Estamos en Villa Urquiza, Capital Federal. Coordinamos retiro o entrega por WhatsApp."
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { Boxes, Handshake, PartyPopper } from 'lucide-react'
 import Starburst from './Starburst'
+import { useSite } from '@/lib/site'
 import { waLink } from '@/lib/whatsapp'
 
 const POINTS = [
@@ -21,6 +22,7 @@ const POINTS = [
 ]
 
 export default function Wholesale() {
+  const { business } = useSite()
   return (
     <section id="mayoristas" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="relative border-ink shadow-hard bg-rojo bg-halftone-rojo p-8 md:p-12">
@@ -52,7 +54,7 @@ export default function Wholesale() {
         </div>
 
         <a
-          href={waLink('Hola 57! Quiero consultar por venta mayorista.')}
+          href={waLink('Hola 57! Quiero consultar por venta mayorista.', business.whatsapp)}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-retro bg-sol text-tinta mt-9"

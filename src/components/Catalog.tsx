@@ -1,14 +1,10 @@
 import { Minus, Plus } from 'lucide-react'
 import PizzaArt from './PizzaArt'
 import SmartImage from './SmartImage'
-import {
-  CATEGORY_LABEL,
-  CATEGORY_ORDER,
-  PRODUCTS,
-  formatPrice,
-  type Product,
-} from '@/data/products'
+import { CATEGORY_LABEL, CATEGORY_ORDER, formatPrice } from '@/lib/utils'
+import { useSite } from '@/lib/site'
 import { useCart } from '@/store/cart'
+import type { Product } from '@/types'
 
 function Badge({ kind }: { kind: NonNullable<Product['badge']> }) {
   const styles = kind === 'promo' ? 'bg-rojo' : 'bg-verde'
@@ -90,6 +86,7 @@ function ProductCard({ p }: { p: Product }) {
 }
 
 export default function Catalog() {
+  const { products } = useSite()
   return (
     <section id="catalogo" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <div className="flex items-center gap-4 flex-wrap">
@@ -109,7 +106,7 @@ export default function Catalog() {
             {CATEGORY_LABEL[cat]}
           </h3>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PRODUCTS.filter((p) => p.category === cat).map((p) => (
+            {products.filter((p) => p.category === cat).map((p) => (
               <ProductCard key={p.id} p={p} />
             ))}
           </div>

@@ -1,4 +1,4 @@
-import type { Topping } from '@/data/products'
+import type { Topping } from '@/types'
 
 // Arte SVG de la pizza: cada topping dibuja sus propias formas.
 // Posiciones deterministas para que no cambien en cada render.
