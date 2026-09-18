@@ -14,7 +14,7 @@
   "marquee": [
     "3 DE MUZZA $21.000",
     "3 DE SABORES $27.000",
-    "CONGELADAS · LISTAS PARA HORNEAR",
+    "CASERAS · LISTAS PARA HORNEAR",
     "PEDÍ POR WHATSAPP"
   ],
   "products": [
@@ -96,7 +96,7 @@
     {
       "id": "promo-3-muzza",
       "name": "3 de Muzza",
-      "desc": "Tres muzzarellas de 8 porciones. El freezer te lo agradece.",
+      "desc": "Tres muzzarellas de 8 porciones. Para tener siempre a mano.",
       "price": 21000,
       "badge": "promo",
       "category": "promos",
@@ -116,8 +116,8 @@
   ],
   "faqs": [
     {
-      "q": "¿Las pizzas vienen congeladas?",
-      "a": "Sí. Todas nuestras pizzas van congeladas y listas para hornear: las sacás del freezer directo al horno, sin descongelar. Duran hasta 3 meses en el freezer."
+      "q": "¿Vienen listas para hornear?",
+      "a": "Sí. Todas las pizzas van armadas y listas para tu horno: las sacás del envase y van directo al horno precalentado, sin preparar nada."
     },
     {
       "q": "¿Cuánto tardan en hornearse?",
@@ -128,8 +128,12 @@
       "a": "Armás tu pedido en esta web y lo enviás por WhatsApp, o nos escribís directamente. Coordinamos entrega y pago por el mismo chat."
     },
     {
+      "q": "¿Puedo revenderlas en mi comercio?",
+      "a": "Sí. Trabajamos con almacenes, rotiserías, dietéticas, cafés y autoservicios: las horneás y vendés en el momento, o las ofrecés listas para hornear. Pedinos la lista mayorista por WhatsApp."
+    },
+    {
       "q": "¿Venden por mayor?",
-      "a": "Sí, trabajamos con mayoristas y particulares: almacenes, rotiserías, dietéticas y eventos. Escribinos por WhatsApp para precios por cantidad."
+      "a": "Sí, con precios por cantidad para comercios, eventos y particulares. También hacemos entregas programadas para que tu local no se quede sin stock. Escribinos por WhatsApp."
     },
     {
       "q": "¿Dónde están?",
