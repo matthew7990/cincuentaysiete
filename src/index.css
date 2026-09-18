@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+
+  /* Paleta 57 - masa, tomate, queso */
+  --color-noche: #161110;
+  --color-noche-2: #1e1715;
+  --color-carbon: #261c18;
+  --color-crema: #f6ecd8;
+  --color-crema-dim: #c9b795;
+  --color-tomate: #e23b24;
+  --color-tomate-deep: #b02a18;
+  --color-queso: #f2b33d;
+  --color-queso-deep: #d99827;
+  --color-albahaca: #5c8a3c;
+  --color-masa: #eec27a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-noche text-crema font-sans antialiased;
+}
+
+.font-display {
+  font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  font-stretch: 125%;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Cinta marquee de promos */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}

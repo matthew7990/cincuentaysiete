@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#161110"/>
+  <circle cx="960" cy="315" r="330" fill="#e23b24" opacity="0.12"/>
+  <circle cx="960" cy="315" r="230" fill="#eec27a"/>
+  <circle cx="960" cy="315" r="230" fill="none" stroke="#d99827" stroke-width="26"/>
+  <circle cx="960" cy="315" r="192" fill="#c2401f"/>
+  <circle cx="960" cy="315" r="185" fill="#f2b33d" opacity="0.95"/>
+  <g fill="#f8e3a1" opacity="0.95">
+    <ellipse cx="855" cy="240" rx="52" ry="42"/>
+    <ellipse cx="1040" cy="215" rx="55" ry="44"/>
+    <ellipse cx="1075" cy="355" rx="52" ry="40"/>
+    <ellipse cx="905" cy="415" rx="56" ry="42"/>
+    <ellipse cx="975" cy="300" rx="50" ry="40"/>
+    <ellipse cx="825" cy="340" rx="48" ry="38"/>
+  </g>
+  <g fill="#c93420">
+    <circle cx="900" cy="230" r="38"/>
+    <circle cx="1060" cy="285" r="40"/>
+    <circle cx="940" cy="380" r="38"/>
+  </g>
+  <g fill="#3a3230" stroke="#6b5f5a" stroke-width="6">
+    <circle cx="1000" cy="220" r="20"/>
+    <circle cx="850" cy="300" r="20"/>
+    <circle cx="1020" cy="400" r="20"/>
+  </g>
+  <text x="80" y="230" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="#f6ecd8">57</text>
+  <text x="80" y="300" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#e23b24">PIZZAS CASERAS</text>
+  <text x="80" y="370" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#f6ecd8">LISTAS PARA HORNEAR</text>
+  <text x="80" y="450" font-family="Arial, sans-serif" font-size="28" fill="#c9b795">Congeladas · 8 porciones · Villa Urquiza, CABA</text>
+  <rect x="80" y="500" width="360" height="64" rx="32" fill="#e23b24"/>
+  <text x="260" y="542" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f6ecd8">PEDÍ POR WHATSAPP</text>
+</svg>
