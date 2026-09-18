@@ -1,5 +1,6 @@
 import { Minus, Plus } from 'lucide-react'
 import PizzaArt from './PizzaArt'
+import SmartImage from './SmartImage'
 import {
   CATEGORY_LABEL,
   CATEGORY_ORDER,
@@ -28,14 +29,21 @@ function ProductCard({ p }: { p: Product }) {
 
   return (
     <article className="group flex flex-col border-ink shadow-hard bg-blanco p-5 transition-transform hover:-translate-y-1">
-      <div className="flex items-start justify-between">
-        <div className="rounded-full border-ink bg-papel p-1.5">
-          <PizzaArt toppings={p.toppings} size={88} />
+      <div className="relative">
+        <div className="border-ink bg-papel aspect-square overflow-hidden grid place-items-center">
+          <SmartImage
+            base={`fotos/${p.id}`}
+            alt={`Pizza ${p.name} de 57`}
+            className="w-full h-full object-cover"
+            fallback={<PizzaArt toppings={p.toppings} size={150} />}
+          />
         </div>
-        <div className="flex flex-col items-end gap-2 pt-1">
+        <div className="absolute top-2 right-2 flex flex-col items-end gap-2">
           {p.badge && <Badge kind={p.badge} />}
           {p.size && (
-            <span className="font-ticket text-[11px] uppercase text-tinta/60">{p.size}</span>
+            <span className="font-ticket text-[11px] uppercase bg-blanco border-2 border-tinta px-1.5 py-0.5">
+              {p.size}
+            </span>
           )}
         </div>
       </div>

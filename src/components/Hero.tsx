@@ -1,5 +1,6 @@
 import { Flame, MapPin, Snowflake } from 'lucide-react'
 import PizzaArt from './PizzaArt'
+import SmartImage from './SmartImage'
 import Confetti from './Confetti'
 import Starburst from './Starburst'
 import { BUSINESS } from '@/config'
@@ -61,10 +62,17 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-sm">
           {/* sticker gigante con la pizza */}
-          <div className="border-ink shadow-hard bg-blanco rounded-full aspect-square grid place-items-center rotate-3">
-            <PizzaArt
-              size={300}
-              toppings={['muzza', 'tomate', 'aceituna', 'provenzal', 'jamon', 'morron']}
+          <div className="border-ink shadow-hard bg-blanco rounded-full aspect-square overflow-hidden grid place-items-center rotate-3">
+            <SmartImage
+              base="fotos/hero"
+              alt="Pizza casera de 57"
+              className="w-full h-full object-cover"
+              fallback={
+                <PizzaArt
+                  size={300}
+                  toppings={['muzza', 'tomate', 'aceituna', 'provenzal', 'jamon', 'morron']}
+                />
+              }
             />
           </div>
           <Starburst

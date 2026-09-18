@@ -1,0 +1,19 @@
+FOTOS DEL SITIO - poner los archivos acá con estos nombres exactos.
+Formatos aceptados: .jpg .jpeg .png .webp (prueba en ese orden).
+Si una foto falta, el sitio muestra el dibujo placeholder.
+
+logo.*              -> el logo de 57 (el de la foto de perfil de Instagram)
+hero.*              -> la mejor foto de una pizza (va en el círculo grande del inicio)
+
+muzza.*             -> Muzzarella
+napo.*              -> Napolitana
+fugazzeta.*         -> Fugazzeta
+jamon-morron.*      -> Jamón y Morrones
+calabresa.*         -> Calabresa
+la-57.*             -> La 57 (especial)
+pizzeta-muzza.*     -> Pizzeta Muzza
+pizzeta-napo.*      -> Pizzeta Napo
+promo-3-muzza.*     -> Promo 3 de Muzza
+promo-3-sabores.*   -> Promo 3 de Sabores
+
+Después de poner fotos: npm run deploy

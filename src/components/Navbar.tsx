@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MessageCircle } from 'lucide-react'
 import InstagramIcon from '@/components/InstagramIcon'
+import SmartImage from '@/components/SmartImage'
 import { BUSINESS } from '@/config'
 import { waChatLink } from '@/lib/whatsapp'
 
@@ -29,9 +30,16 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-2.5">
           <a href="#top" className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-11 h-11 rounded-full bg-rojo border-ink shadow-hard-xs font-retro text-lg text-blanco">
-              57
-            </span>
+            <SmartImage
+              base="logo"
+              alt="Logo de 57"
+              className="w-11 h-11 rounded-full border-ink shadow-hard-xs object-cover bg-blanco"
+              fallback={
+                <span className="grid place-items-center w-11 h-11 rounded-full bg-rojo border-ink shadow-hard-xs font-retro text-lg text-blanco">
+                  57
+                </span>
+              }
+            />
             <span className="hidden sm:block font-script text-xl text-tinta leading-none pt-1">
               pizzas caseras
             </span>

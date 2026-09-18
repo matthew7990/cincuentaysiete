@@ -1,5 +1,6 @@
 import { MapPin, MessageCircle } from 'lucide-react'
 import InstagramIcon from '@/components/InstagramIcon'
+import SmartImage from '@/components/SmartImage'
 import { BUSINESS } from '@/config'
 import { waChatLink } from '@/lib/whatsapp'
 
@@ -13,9 +14,16 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-center">
           <div>
             <p className="flex items-center gap-3">
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-rojo border-4 border-blanco font-retro text-xl">
-                57
-              </span>
+              <SmartImage
+                base="logo"
+                alt="Logo de 57"
+                className="h-14 w-14 rounded-full border-4 border-blanco object-cover bg-blanco"
+                fallback={
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-rojo border-4 border-blanco font-retro text-xl">
+                    57
+                  </span>
+                }
+              />
               <span>
                 <span className="block font-retro text-lg uppercase leading-none">
                   Pizzas caseras
