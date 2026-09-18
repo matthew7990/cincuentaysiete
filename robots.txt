@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matthew7990.github.io/cincuentaysiete/sitemap.xml
