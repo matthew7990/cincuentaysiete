@@ -10,13 +10,12 @@ import {
 import { useCart } from '@/store/cart'
 
 function Badge({ kind }: { kind: NonNullable<Product['badge']> }) {
-  const styles =
-    kind === 'promo'
-      ? 'bg-tomate text-crema'
-      : 'bg-albahaca text-crema'
-  const label = kind === 'promo' ? 'PROMO' : 'NUEVO'
+  const styles = kind === 'promo' ? 'bg-rojo' : 'bg-verde'
+  const label = kind === 'promo' ? '¡PROMO!' : '¡NUEVA!'
   return (
-    <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${styles}`}>
+    <span
+      className={`border-ink shadow-hard-xs px-2.5 py-0.5 font-retro text-[11px] uppercase text-blanco -rotate-3 ${styles}`}
+    >
       {label}
     </span>
   )
@@ -28,51 +27,52 @@ function ProductCard({ p }: { p: Product }) {
   const remove = useCart((s) => s.remove)
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-crema/10 bg-noche-2 p-5 transition-colors hover:border-queso/30">
+    <article className="group flex flex-col border-ink shadow-hard bg-blanco p-5 transition-transform hover:-translate-y-1">
       <div className="flex items-start justify-between">
-        <PizzaArt toppings={p.toppings} size={96} />
-        <div className="flex flex-col items-end gap-2">
+        <div className="rounded-full border-ink bg-papel p-1.5">
+          <PizzaArt toppings={p.toppings} size={88} />
+        </div>
+        <div className="flex flex-col items-end gap-2 pt-1">
           {p.badge && <Badge kind={p.badge} />}
           {p.size && (
-            <span className="text-[11px] uppercase tracking-wider text-crema-dim">{p.size}</span>
+            <span className="font-ticket text-[11px] uppercase text-tinta/60">{p.size}</span>
           )}
         </div>
       </div>
 
-      <h3 className="mt-4 font-display text-xl uppercase">{p.name}</h3>
-      <p className="mt-1.5 flex-1 text-sm leading-relaxed text-crema-dim">{p.desc}</p>
+      <h3 className="mt-4 font-retro text-xl uppercase">{p.name}</h3>
+      <p className="mt-1.5 flex-1 text-sm leading-relaxed text-tinta/70">{p.desc}</p>
 
-      <div className="mt-4 flex items-end justify-between gap-3">
+      <div className="mt-4 flex items-end justify-between gap-3 border-t-2 border-dashed border-tinta/25 pt-4">
         <div>
           {p.originalPrice && (
-            <p className="text-xs text-crema-dim line-through">{formatPrice(p.originalPrice)}</p>
+            <p className="font-ticket text-xs text-tinta/50 line-through">
+              {formatPrice(p.originalPrice)}
+            </p>
           )}
-          <p className="font-display text-2xl text-queso">{formatPrice(p.price)}</p>
+          <p className="font-ticket text-2xl font-bold text-rojo">{formatPrice(p.price)}</p>
         </div>
 
         {qty === 0 ? (
-          <button
-            onClick={() => add(p.id)}
-            className="rounded-full bg-tomate px-4 py-2 text-sm font-semibold text-crema transition-colors hover:bg-tomate-deep"
-          >
+          <button onClick={() => add(p.id)} className="btn-retro bg-teal text-blanco">
             Agregar
           </button>
         ) : (
-          <div className="flex items-center gap-3 rounded-full border border-queso/40 px-2 py-1">
+          <div className="flex items-center gap-2 border-ink shadow-hard-xs bg-sol px-2 py-1">
             <button
               onClick={() => remove(p.id)}
               aria-label={`Quitar una ${p.name}`}
-              className="p-1 text-crema-dim hover:text-crema"
+              className="p-1 hover:text-rojo"
             >
-              <Minus size={16} />
+              <Minus size={16} strokeWidth={3} />
             </button>
-            <span className="min-w-4 text-center font-semibold">{qty}</span>
+            <span className="min-w-5 text-center font-ticket font-bold">{qty}</span>
             <button
               onClick={() => add(p.id)}
               aria-label={`Agregar una ${p.name}`}
-              className="p-1 text-crema-dim hover:text-crema"
+              className="p-1 hover:text-rojo"
             >
-              <Plus size={16} />
+              <Plus size={16} strokeWidth={3} />
             </button>
           </div>
         )}
@@ -84,20 +84,23 @@ function ProductCard({ p }: { p: Product }) {
 export default function Catalog() {
   return (
     <section id="catalogo" className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <h2 className="font-display text-4xl md:text-5xl uppercase">
-        Elegí tus <span className="text-tomate">pizzas</span>
-      </h2>
-      <p className="mt-3 max-w-lg text-crema-dim">
-        Todas congeladas, de 8 porciones, listas para hornear. Armá el pedido acá
-        y lo mandás por WhatsApp.
+      <div className="flex items-center gap-4 flex-wrap">
+        <h2 className="font-retro text-4xl md:text-5xl uppercase">
+          Elegí tus <span className="text-rojo">pizzas</span>
+        </h2>
+        <span className="font-script text-2xl text-teal rotate-[-2deg]">todas congeladas</span>
+      </div>
+      <p className="mt-4 max-w-lg font-medium text-tinta/75">
+        De 8 porciones, listas para hornear. Armá el pedido acá y lo mandás
+        directo por WhatsApp.
       </p>
 
       {CATEGORY_ORDER.map((cat) => (
         <div key={cat} className="mt-12">
-          <h3 className="font-display text-lg uppercase tracking-wider text-queso">
+          <h3 className="font-retro text-lg uppercase inline-block border-b-4 border-sol pb-1">
             {CATEGORY_LABEL[cat]}
           </h3>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PRODUCTS.filter((p) => p.category === cat).map((p) => (
               <ProductCard key={p.id} p={p} />
             ))}

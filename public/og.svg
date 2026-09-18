@@ -1,32 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#161110"/>
-  <circle cx="960" cy="315" r="330" fill="#e23b24" opacity="0.12"/>
-  <circle cx="960" cy="315" r="230" fill="#eec27a"/>
-  <circle cx="960" cy="315" r="230" fill="none" stroke="#d99827" stroke-width="26"/>
-  <circle cx="960" cy="315" r="192" fill="#c2401f"/>
-  <circle cx="960" cy="315" r="185" fill="#f2b33d" opacity="0.95"/>
-  <g fill="#f8e3a1" opacity="0.95">
-    <ellipse cx="855" cy="240" rx="52" ry="42"/>
-    <ellipse cx="1040" cy="215" rx="55" ry="44"/>
-    <ellipse cx="1075" cy="355" rx="52" ry="40"/>
-    <ellipse cx="905" cy="415" rx="56" ry="42"/>
-    <ellipse cx="975" cy="300" rx="50" ry="40"/>
-    <ellipse cx="825" cy="340" rx="48" ry="38"/>
+  <rect width="1200" height="630" fill="#f5ebd6"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <defs>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#241a14" opacity="0.07"/>
+    </pattern>
+    <pattern id="checks" width="52" height="52" patternUnits="userSpaceOnUse">
+      <rect width="52" height="52" fill="#fffcf3"/>
+      <rect width="26" height="26" fill="#d62828"/>
+      <rect x="26" y="26" width="26" height="26" fill="#d62828"/>
+    </pattern>
+  </defs>
+
+  <!-- pizza sticker -->
+  <circle cx="945" cy="290" r="225" fill="#eec27a" stroke="#241a14" stroke-width="9"/>
+  <circle cx="945" cy="290" r="205" fill="none" stroke="#d99827" stroke-width="20"/>
+  <circle cx="945" cy="290" r="180" fill="#c2401f"/>
+  <circle cx="945" cy="290" r="172" fill="#f2b33d" opacity="0.95"/>
+  <g fill="#f8e3a1">
+    <ellipse cx="850" cy="205" rx="50" ry="40"/>
+    <ellipse cx="1035" cy="185" rx="53" ry="42"/>
+    <ellipse cx="1070" cy="320" rx="50" ry="38"/>
+    <ellipse cx="900" cy="385" rx="54" ry="40"/>
+    <ellipse cx="970" cy="270" rx="48" ry="38"/>
+    <ellipse cx="825" cy="310" rx="46" ry="36"/>
   </g>
-  <g fill="#c93420">
-    <circle cx="900" cy="230" r="38"/>
-    <circle cx="1060" cy="285" r="40"/>
-    <circle cx="940" cy="380" r="38"/>
+  <g fill="#c93420" stroke="#241a14" stroke-width="4">
+    <circle cx="895" cy="200" r="36"/>
+    <circle cx="1050" cy="255" r="38"/>
+    <circle cx="935" cy="350" r="36"/>
   </g>
-  <g fill="#3a3230" stroke="#6b5f5a" stroke-width="6">
-    <circle cx="1000" cy="220" r="20"/>
-    <circle cx="850" cy="300" r="20"/>
-    <circle cx="1020" cy="400" r="20"/>
+  <g fill="#3a3230" stroke="#6b5f5a" stroke-width="5">
+    <circle cx="990" cy="195" r="19"/>
+    <circle cx="845" cy="275" r="19"/>
+    <circle cx="1010" cy="370" r="19"/>
   </g>
-  <text x="80" y="230" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="#f6ecd8">57</text>
-  <text x="80" y="300" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#e23b24">PIZZAS CASERAS</text>
-  <text x="80" y="370" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#f6ecd8">LISTAS PARA HORNEAR</text>
-  <text x="80" y="450" font-family="Arial, sans-serif" font-size="28" fill="#c9b795">Congeladas · 8 porciones · Villa Urquiza, CABA</text>
-  <rect x="80" y="500" width="360" height="64" rx="32" fill="#e23b24"/>
-  <text x="260" y="542" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#f6ecd8">PEDÍ POR WHATSAPP</text>
+
+  <!-- tipografia cartel -->
+  <text x="70" y="180" font-family="Arial Black, Arial, sans-serif" font-size="150" font-weight="900" fill="#241a14">57</text>
+  <text x="70" y="185" font-family="Arial Black, Arial, sans-serif" font-size="150" font-weight="900" fill="none" stroke="#241a14" stroke-width="1">57</text>
+  <text x="72" y="270" font-family="Arial, sans-serif" font-size="52" font-weight="900" fill="#d62828">PIZZAS CASERAS</text>
+  <text x="72" y="340" font-family="Arial, sans-serif" font-size="52" font-weight="900" fill="#12808c">LISTAS PARA HORNEAR</text>
+  <text x="72" y="415" font-family="Courier New, monospace" font-size="30" font-weight="bold" fill="#241a14">Congeladas · 8 porciones · Villa Urquiza, CABA</text>
+
+  <!-- boton -->
+  <g>
+    <rect x="72" y="465" width="380" height="70" fill="#12808c" stroke="#241a14" stroke-width="5"/>
+    <rect x="78" y="471" width="380" height="70" fill="none" stroke="#241a14" stroke-width="5" opacity="0"/>
+    <text x="262" y="512" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#fffcf3">PEDÍ POR WHATSAPP</text>
+  </g>
+
+  <!-- damero inferior -->
+  <rect x="0" y="578" width="1200" height="52" fill="url(#checks)"/>
+  <rect x="0" y="578" width="1200" height="6" fill="#241a14"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#241a14"/>
 </svg>

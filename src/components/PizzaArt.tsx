@@ -34,10 +34,10 @@ export default function PizzaArt({ toppings, size = 120 }: { toppings: Topping[]
   const spread = Array.from({ length: 8 }, (_, i) => toppings[i % toppings.length])
   return (
     <svg viewBox="-32 -32 64 64" width={size} height={size} role="img" aria-hidden="true">
-      <circle r="30" fill="#eec27a" />
-      <circle r="30" fill="none" stroke="#d99827" strokeWidth="3.5" />
-      <circle r="25" fill="#c2401f" />
-      <circle r="24" fill="#f2b33d" opacity="0.94" />
+      <circle r="30" fill="#eec27a" stroke="#241a14" strokeWidth="2.2" />
+      <circle r="27.5" fill="none" stroke="#d99827" strokeWidth="3" />
+      <circle r="24.5" fill="#c2401f" />
+      <circle r="23.5" fill="#f2b33d" opacity="0.94" />
       {spread.map((t, i) => (
         <ToppingShapes key={i} t={t} i={i} />
       ))}

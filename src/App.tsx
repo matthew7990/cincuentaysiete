@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import PromoStrip from '@/components/PromoStrip'
 import Catalog from '@/components/Catalog'
+import CheckeredStrip from '@/components/CheckeredStrip'
 import HowToBake from '@/components/HowToBake'
 import Wholesale from '@/components/Wholesale'
 import About from '@/components/About'
@@ -17,6 +18,7 @@ export default function App() {
         <Hero />
         <PromoStrip />
         <Catalog />
+        <CheckeredStrip />
         <HowToBake />
         <Wholesale />
         <About />

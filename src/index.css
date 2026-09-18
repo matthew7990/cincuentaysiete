@@ -2,19 +2,22 @@
 
 @theme {
   --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-retro: 'Bungee', ui-sans-serif, system-ui, sans-serif;
+  --font-script: 'Pacifico', cursive;
+  --font-ticket: 'Space Mono', monospace;
 
-  /* Paleta 57 - masa, tomate, queso */
-  --color-noche: #161110;
-  --color-noche-2: #1e1715;
-  --color-carbon: #261c18;
-  --color-crema: #f6ecd8;
-  --color-crema-dim: #c9b795;
-  --color-tomate: #e23b24;
-  --color-tomate-deep: #b02a18;
-  --color-queso: #f2b33d;
-  --color-queso-deep: #d99827;
-  --color-albahaca: #5c8a3c;
-  --color-masa: #eec27a;
+  /* Paleta pizzeria 80s */
+  --color-papel: #f5ebd6;
+  --color-papel-2: #efe1c3;
+  --color-tinta: #241a14;
+  --color-rojo: #d62828;
+  --color-rojo-deep: #b01f1f;
+  --color-teal: #12808c;
+  --color-teal-deep: #0d646e;
+  --color-rosa: #ee7ba0;
+  --color-sol: #f2b33d;
+  --color-verde: #3e7c4f;
+  --color-blanco: #fffcf3;
 }
 
 html {
@@ -22,21 +25,118 @@ html {
 }
 
 body {
-  @apply bg-noche text-crema font-sans antialiased;
+  @apply bg-papel text-tinta font-sans antialiased;
 }
 
-.font-display {
-  font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
-  font-stretch: 125%;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+/* ---- Tipografia retro ---- */
+.font-retro {
+  font-family: var(--font-retro);
+  letter-spacing: 0.01em;
+}
+.font-script {
+  font-family: var(--font-script);
+}
+.font-ticket {
+  font-family: var(--font-ticket);
 }
 
-/* Cinta marquee de promos */
+/* Titulos con sombras apiladas estilo cartel 80s */
+.text-stack {
+  text-shadow:
+    0.06em 0.06em 0 var(--color-rojo),
+    0.12em 0.12em 0 var(--color-teal);
+}
+.text-stack-sm {
+  text-shadow:
+    0.08em 0.08em 0 var(--color-tinta);
+}
+
+/* ---- Bordes y sombras duras (sticker/print) ---- */
+.border-ink {
+  border: 3px solid var(--color-tinta);
+}
+.shadow-hard {
+  box-shadow: 6px 6px 0 var(--color-tinta);
+}
+.shadow-hard-sm {
+  box-shadow: 4px 4px 0 var(--color-tinta);
+}
+.shadow-hard-xs {
+  box-shadow: 3px 3px 0 var(--color-tinta);
+}
+
+.btn-retro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: 3px solid var(--color-tinta);
+  box-shadow: 4px 4px 0 var(--color-tinta);
+  font-family: var(--font-retro);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+.btn-retro:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--color-tinta);
+}
+.btn-retro:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--color-tinta);
+}
+
+/* ---- Damero rojo/blanco (mantel de pizzeria) ---- */
+.bg-checker {
+  background: repeating-conic-gradient(var(--color-blanco) 0% 25%, var(--color-rojo) 0% 50%) 0 0 / 26px 26px;
+}
+.bg-checker-tinta {
+  background: repeating-conic-gradient(var(--color-blanco) 0% 25%, var(--color-tinta) 0% 50%) 0 0 / 26px 26px;
+}
+
+/* ---- Medios tonos (print) ---- */
+.bg-halftone {
+  background-image: radial-gradient(rgba(36, 26, 20, 0.07) 1.2px, transparent 1.4px);
+  background-size: 16px 16px;
+}
+.bg-halftone-rojo {
+  background-image: radial-gradient(rgba(255, 252, 243, 0.16) 1.2px, transparent 1.4px);
+  background-size: 16px 16px;
+}
+
+/* Borde dentado de ticket */
+.ticket-edge {
+  --notch: 10px;
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% calc(100% - var(--notch)),
+    95% 100%, 90% calc(100% - var(--notch)),
+    85% 100%, 80% calc(100% - var(--notch)),
+    75% 100%, 70% calc(100% - var(--notch)),
+    65% 100%, 60% calc(100% - var(--notch)),
+    55% 100%, 50% calc(100% - var(--notch)),
+    45% 100%, 40% calc(100% - var(--notch)),
+    35% 100%, 30% calc(100% - var(--notch)),
+    25% 100%, 20% calc(100% - var(--notch)),
+    15% 100%, 10% calc(100% - var(--notch)),
+    5% 100%, 0% calc(100% - var(--notch))
+  );
+}
+
+/* Cinta marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 22s linear infinite;
+  animation: marquee 26s linear infinite;
+}
+
+/* Wobble suave para stickers/badges */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(-3deg); }
+}
+.animate-wobble {
+  animation: wobble 4s ease-in-out infinite;
 }
