@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Download, Eye, EyeOff, Plus, Rocket, Trash2, Upload, X } from 'lucide-react'
 import { useSite, setPreview, clearPreview } from '@/lib/site'
 import { checkToken, publishSiteJson } from '@/lib/github'
@@ -164,6 +164,7 @@ export default function AdminApp() {
   const [busy, setBusy] = useState(false)
 
   // El borrador arranca del preview (si había) o del sitio publicado
+  const [dirty, setDirty] = useState(false)
   const [draft, setDraft] = useState<SiteData>(() => {
     const p = localStorage.getItem('site_preview')
     if (p) {
@@ -172,7 +173,15 @@ export default function AdminApp() {
     return site
   })
 
-  const patch = (part: Partial<SiteData>) => setDraft((d) => ({ ...d, ...part }))
+  // site llega async (fetch site.json): adoptarlo mientras no se editó nada
+  useEffect(() => {
+    if (!dirty) setDraft(site)
+  }, [site, dirty])
+
+  const patch = (part: Partial<SiteData>) => {
+    setDirty(true)
+    setDraft((d) => ({ ...d, ...part }))
+  }
 
   const json = useMemo(() => JSON.stringify(draft, null, 2), [draft])
 
@@ -221,6 +230,7 @@ export default function AdminApp() {
   function handleReset() {
     if (!confirm('Descartar todos los cambios del borrador?')) return
     setDraft(site)
+    setDirty(false)
     clearPreview()
     setStatus('Borrador descartado.')
   }
